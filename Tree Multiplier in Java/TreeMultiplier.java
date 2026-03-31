@@ -321,23 +321,27 @@ private Node N55;
             P15 = N55.carry();
         }
 
-        public void MultiplierOutput() {
-            System.out.println(P15);
-            System.out.println(P14);
-            System.out.println(P13);
-            System.out.println(P12);
-            System.out.println(P11);
-            System.out.println(P10);
-            System.out.println(P9);
-            System.out.println(P8);
-            System.out.println(P7);
-            System.out.println(P6);
-            System.out.println(P5);
-            System.out.println(P4);
-            System.out.println(P3);
-            System.out.println(P2);
-            System.out.println(P1);
-            System.out.println(P0);
+        //Multiplier outputs
+        public boolean P0() { return P0; }
+        public boolean P1() { return P1; }
+        public boolean P2() { return P2; }
+        public boolean P3() { return P3; }
+        public boolean P4() { return P4; }
+        public boolean P5() { return P5; }
+        public boolean P6() { return P6; }
+        public boolean P7() { return P7; }
+        public boolean P8() { return P8; }
+        public boolean P9() { return P9; }
+        public boolean P10() { return P10; }
+        public boolean P11() { return P11; }
+        public boolean P12() { return P12; }
+        public boolean P13() { return P13; }
+        public boolean P14() { return P14; }
+        public boolean P15() { return P15; }
+
+        @Override
+        public String toString() {
+            return P15+" "+P14+" "+P13+" "+P12+" "+P11+" "+P10+" "+P9+" "+P8+" "+P7+" "+P6+" "+P5+" "+P4+" "+P3+" "+P2+" "+P1+" "+P0;
         }
 
 }
