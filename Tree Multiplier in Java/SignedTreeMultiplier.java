@@ -1,4 +1,4 @@
-public class TreeMultiplier {
+public class SignedTreeMultiplier {
 
 //Multiplier Inputs (The multiplier’s input and output wires can be represented by edges, the edges connect to the Node objects)
 private boolean A0;
@@ -36,7 +36,7 @@ private boolean P13;
 private boolean P14;
 private boolean P15;
 
-//AND Gate instances
+//AND Gate and NAND Gate instances
 private ANDGate A0B0;
 private ANDGate A0B1;
 private ANDGate A0B2;
@@ -44,7 +44,7 @@ private ANDGate A0B3;
 private ANDGate A0B4;
 private ANDGate A0B5;
 private ANDGate A0B6;
-private ANDGate A0B7;
+private NANDGate A0B7;
 private ANDGate A1B0;
 private ANDGate A1B1;
 private ANDGate A1B2;
@@ -52,7 +52,7 @@ private ANDGate A1B3;
 private ANDGate A1B4;
 private ANDGate A1B5;
 private ANDGate A1B6;
-private ANDGate A1B7;
+private NANDGate A1B7;
 private ANDGate A2B0;
 private ANDGate A2B1;
 private ANDGate A2B2;
@@ -60,7 +60,7 @@ private ANDGate A2B3;
 private ANDGate A2B4;
 private ANDGate A2B5;
 private ANDGate A2B6;
-private ANDGate A2B7;
+private NANDGate A2B7;
 private ANDGate A3B0;
 private ANDGate A3B1;
 private ANDGate A3B2;
@@ -68,7 +68,7 @@ private ANDGate A3B3;
 private ANDGate A3B4;
 private ANDGate A3B5;
 private ANDGate A3B6;
-private ANDGate A3B7;
+private NANDGate A3B7;
 private ANDGate A4B0;
 private ANDGate A4B1;
 private ANDGate A4B2;
@@ -76,7 +76,7 @@ private ANDGate A4B3;
 private ANDGate A4B4;
 private ANDGate A4B5;
 private ANDGate A4B6;
-private ANDGate A4B7;
+private NANDGate A4B7;
 private ANDGate A5B0;
 private ANDGate A5B1;
 private ANDGate A5B2;
@@ -84,7 +84,7 @@ private ANDGate A5B3;
 private ANDGate A5B4;
 private ANDGate A5B5;
 private ANDGate A5B6;
-private ANDGate A5B7;
+private NANDGate A5B7;
 private ANDGate A6B0;
 private ANDGate A6B1;
 private ANDGate A6B2;
@@ -92,14 +92,14 @@ private ANDGate A6B3;
 private ANDGate A6B4;
 private ANDGate A6B5;
 private ANDGate A6B6;
-private ANDGate A6B7;
-private ANDGate A7B0;
-private ANDGate A7B1;
-private ANDGate A7B2;
-private ANDGate A7B3;
-private ANDGate A7B4;
-private ANDGate A7B5;
-private ANDGate A7B6;
+private NANDGate A6B7;
+private NANDGate A7B0;
+private NANDGate A7B1;
+private NANDGate A7B2;
+private NANDGate A7B3;
+private NANDGate A7B4;
+private NANDGate A7B5;
+private NANDGate A7B6;
 private ANDGate A7B7;
 
 //Node instances
@@ -159,9 +159,10 @@ private Node N52;
 private Node N53;
 private Node N54;
 private Node N55;
+private Node N56;
 
         //The Tree Multiplier constructor will construct the tree multiplier by connecting the Node objects together
-        public TreeMultiplier(boolean a0, boolean a1, boolean a2, boolean a3, boolean a4, boolean a5, boolean a6, boolean a7, boolean b0, boolean b1, boolean b2, boolean b3, boolean b4, boolean b5, boolean b6, boolean b7) {
+        public SignedTreeMultiplier(boolean a0, boolean a1, boolean a2, boolean a3, boolean a4, boolean a5, boolean a6, boolean a7, boolean b0, boolean b1, boolean b2, boolean b3, boolean b4, boolean b5, boolean b6, boolean b7) {
             //Input initialization
             A0 = a0;
             A1 = a1;
@@ -180,7 +181,7 @@ private Node N55;
             B6 = b6;
             B7 = b7;
 
-            //AND Gate initialization
+            //AND Gate and NAND Gate initialization
             A0B0 = new ANDGate(A0, B0);
             A0B1 = new ANDGate(A0, B1);
             A0B2 = new ANDGate(A0, B2);
@@ -188,7 +189,7 @@ private Node N55;
             A0B4 = new ANDGate(A0, B4);
             A0B5 = new ANDGate(A0, B5);
             A0B6 = new ANDGate(A0, B6);
-            A0B7 = new ANDGate(A0, B7);
+            A0B7 = new NANDGate(A0, B7);
             A1B0 = new ANDGate(A1, B0);
             A1B1 = new ANDGate(A1, B1);
             A1B2 = new ANDGate(A1, B2);
@@ -196,7 +197,7 @@ private Node N55;
             A1B4 = new ANDGate(A1, B4);
             A1B5 = new ANDGate(A1, B5);
             A1B6 = new ANDGate(A1, B6);
-            A1B7 = new ANDGate(A1, B7);
+            A1B7 = new NANDGate(A1, B7);
             A2B0 = new ANDGate(A2, B0);
             A2B1 = new ANDGate(A2, B1);
             A2B2 = new ANDGate(A2, B2);
@@ -204,7 +205,7 @@ private Node N55;
             A2B4 = new ANDGate(A2, B4);
             A2B5 = new ANDGate(A2, B5);
             A2B6 = new ANDGate(A2, B6);
-            A2B7 = new ANDGate(A2, B7);
+            A2B7 = new NANDGate(A2, B7);
             A3B0 = new ANDGate(A3, B0);
             A3B1 = new ANDGate(A3, B1);
             A3B2 = new ANDGate(A3, B2);
@@ -212,7 +213,7 @@ private Node N55;
             A3B4 = new ANDGate(A3, B4);
             A3B5 = new ANDGate(A3, B5);
             A3B6 = new ANDGate(A3, B6);
-            A3B7 = new ANDGate(A3, B7);
+            A3B7 = new NANDGate(A3, B7);
             A4B0 = new ANDGate(A4, B0);
             A4B1 = new ANDGate(A4, B1);
             A4B2 = new ANDGate(A4, B2);
@@ -220,7 +221,7 @@ private Node N55;
             A4B4 = new ANDGate(A4, B4);
             A4B5 = new ANDGate(A4, B5);
             A4B6 = new ANDGate(A4, B6);
-            A4B7 = new ANDGate(A4, B7);
+            A4B7 = new NANDGate(A4, B7);
             A5B0 = new ANDGate(A5, B0);
             A5B1 = new ANDGate(A5, B1);
             A5B2 = new ANDGate(A5, B2);
@@ -228,7 +229,7 @@ private Node N55;
             A5B4 = new ANDGate(A5, B4);
             A5B5 = new ANDGate(A5, B5);
             A5B6 = new ANDGate(A5, B6);
-            A5B7 = new ANDGate(A5, B7);
+            A5B7 = new NANDGate(A5, B7);
             A6B0 = new ANDGate(A6, B0);
             A6B1 = new ANDGate(A6, B1);
             A6B2 = new ANDGate(A6, B2);
@@ -236,14 +237,14 @@ private Node N55;
             A6B4 = new ANDGate(A6, B4);
             A6B5 = new ANDGate(A6, B5);
             A6B6 = new ANDGate(A6, B6);
-            A6B7 = new ANDGate(A6, B7);
-            A7B0 = new ANDGate(A7, B0);
-            A7B1 = new ANDGate(A7, B1);
-            A7B2 = new ANDGate(A7, B2);
-            A7B3 = new ANDGate(A7, B3);
-            A7B4 = new ANDGate(A7, B4);
-            A7B5 = new ANDGate(A7, B5);
-            A7B6 = new ANDGate(A7, B6);
+            A6B7 = new NANDGate(A6, B7);
+            A7B0 = new NANDGate(A7, B0);
+            A7B1 = new NANDGate(A7, B1);
+            A7B2 = new NANDGate(A7, B2);
+            A7B3 = new NANDGate(A7, B3);
+            A7B4 = new NANDGate(A7, B4);
+            A7B5 = new NANDGate(A7, B5);
+            A7B6 = new NANDGate(A7, B6);
             A7B7 = new ANDGate(A7, B7);
 
             //Node and output initialization
@@ -289,7 +290,7 @@ private Node N55;
             N31 = new Node(N30.sum(), N21.carry(), N22.carry());
             N32 = new Node(N31.sum(), N23.carry(), N24.carry());
             N33 = new Node(N32.sum(), N25.carry(), N26.carry());
-            N34 = new Node(N33.sum(), N27.carry(), false);
+            N34 = new Node(N33.sum(), N27.carry(), true);
             P8 = N34.sum();
             N35 = new Node(A2B7.output(), A3B6.output(), A4B5.output());
             N36 = new Node(A5B4.output(), A6B3.output(), A7B2.output());
@@ -318,7 +319,8 @@ private Node N55;
             P13 = N54.sum();
             N55 = new Node(A7B7.output(), N53.carry(), N54.carry());
             P14 = N55.sum();
-            P15 = N55.carry();
+            N56 = new Node(false, true, N55.carry());
+            P15 = N56.sum();
         }
 
         //Multiplier outputs
